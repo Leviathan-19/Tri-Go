@@ -1,13 +1,13 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+import { Image } from 'expo-image';
 import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
 import * as SplashScreen from 'expo-splash-screen';
+import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
+import { View } from 'react-native';
+import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/use-color-scheme';
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export const unstable_settings = {
@@ -17,12 +17,13 @@ export const unstable_settings = {
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [appIsReady, setAppIsReady] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
     async function prepare() {
       try {
-        // Simulamos una carga de 2 segundos para apreciar el Splash Screen de la Selección
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        // Mantenemos visible el Splash Screen del escudo por 2.5 segundos
+        await new Promise(resolve => setTimeout(resolve, 2500));
       } catch (e) {
         console.warn(e);
       } finally {
@@ -36,11 +37,29 @@ export default function RootLayout() {
   useEffect(() => {
     if (appIsReady) {
       SplashScreen.hideAsync();
+      const timer = setTimeout(() => {
+        setShowIntro(false);
+      }, 5000); // 5 seg. de intro del gif
+
+      return () => clearTimeout(timer);
     }
   }, [appIsReady]);
 
   if (!appIsReady) {
     return null;
+  }
+
+  if (showIntro) {
+    return (
+      <View style={{ flex: 1, backgroundColor: '#ffffffff', justifyContent: 'center', alignItems: 'center' }}>
+        <StatusBar style="light" />
+        <Image
+          source={require('@/assets/images/fonts_tri/enner_valencia.gif')}
+          style={{ width: 300, height: 300 }}
+          contentFit="contain"
+        />
+      </View>
+    );
   }
 
   return (
