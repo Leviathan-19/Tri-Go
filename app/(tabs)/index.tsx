@@ -14,57 +14,208 @@ import {
   View
 } from 'react-native';
 
-// Datos históricos de la selección
 export const YEARS_DATA = [
   {
     id: '2026',
     anio: '2026',
     sede: 'USA, México y Canadá',
     descripcion: '¡La Tri se clasifica por cuarta ocasión en su historia al Mundial!',
-    tecnico: 'Félix Sánchez Bas',
-    jugadores: ['Hernán Galíndez', 'Felix Torres', 'Willian Pacho', 'Moisés Caicedo', 'Kendry Páez', 'Enner Valencia', 'George Michael Mejía', 'Jordy Alcívar', 'John Yeboah', 'Gonzalo Plata', 'José Cifuentes'],
-    resena: 'Ecuador se clasificó a su cuarto Mundial tras una fase eliminatoria llena de esfuerzo y garra. El equipo demostró un gran nivel competitivo bajo la dirección técnica de Félix Sánchez Bas, logrando un cupo directo a la cita mundialista.',
-    imagen: 'seleccion_2026.jpeg' // Se usará por defecto seleccion_2026.jpeg si no hay otra
+    tecnico: 'Sebastián Beccacece (Argentina)',
+    jugadores: [
+      { dorsal: '1', nombre: 'Hernán Galíndez', pos: 'POR' },
+      { dorsal: '12', nombre: 'Moisés Ramírez', pos: 'POR' },
+      { dorsal: '22', nombre: 'Gonzalo Valle', pos: 'POR' },
+      { dorsal: '2', nombre: 'Félix Torres', pos: 'DEF' },
+      { dorsal: '3', nombre: 'Piero Hincapié', pos: 'DEF' },
+      { dorsal: '4', nombre: 'Jackson Porozo', pos: 'DEF' },
+      { dorsal: '6', nombre: 'Willian Pacho', pos: 'DEF' },
+      { dorsal: '7', nombre: 'Pervis Estupiñán', pos: 'DEF' },
+      { dorsal: '17', nombre: 'Ángelo Preciado', pos: 'DEF' },
+      { dorsal: '-', nombre: 'Joel Ordóñez', pos: 'DEF' },
+      { dorsal: '23', nombre: 'Moisés Caicedo', pos: 'MED' },
+      { dorsal: '8', nombre: 'Alan Franco', pos: 'MED' },
+      { dorsal: '10', nombre: 'Kendry Páez', pos: 'MED' },
+      { dorsal: '18', nombre: 'Denil Castillo', pos: 'MED' },
+      { dorsal: '-', nombre: 'Jordy Alcívar', pos: 'MED' },
+      { dorsal: '-', nombre: 'Pedro Vite', pos: 'MED' },
+      { dorsal: '-', nombre: 'Yaimar Medina', pos: 'MED' },
+      { dorsal: '13', nombre: 'Enner Valencia', pos: 'DEL' },
+      { dorsal: '11', nombre: 'Kevin Rodríguez', pos: 'DEL' },
+      { dorsal: '19', nombre: 'Gonzalo Plata', pos: 'DEL' },
+      { dorsal: '9', nombre: 'John Yeboah', pos: 'DEL' },
+      { dorsal: '-', nombre: 'Anthony Valencia', pos: 'DEL' },
+      { dorsal: '-', nombre: 'Jordy Caicedo', pos: 'DEL' },
+      { dorsal: '-', nombre: 'Jeremy Arévalo', pos: 'DEL' },
+      { dorsal: '-', nombre: 'Alan Minda', pos: 'DEL' },
+      { dorsal: '-', nombre: 'Nilson Angulo', pos: 'DEL' }
+    ],
+    resena: 'Ecuador se prepara para su quinta participación en una Copa del Mundo, la cual se celebrará en Canadá, Estados Unidos y México en 2026. La expectativa es alta, ya que la selección cuenta con una "Generación Dorada" de jugadores jóvenes y talentosos que militan en importantes ligas europeas. Clasificó en el segundo lugar de las eliminatorias de la CONMEBOL, demostrando un gran potencial para superar sus actuaciones anteriores.',
+    enfrentamientos: [
+      'Costa de Marfil vs. Ecuador (14 de junio de 2026)',
+      'Ecuador vs. Curazao (20 de junio de 2026)',
+      'Ecuador vs. Alemania (25 de junio de 2026)'
+    ],
+    imagen: require('@/assets/images/players/seleccion_2026.jpeg')
   },
   {
     id: '2022',
     anio: '2022',
-    sede: 'Qatar',
+    sede: 'Catar',
     descripcion: 'Gran victoria frente al anfitrión en el partido inaugural con doblete de Enner Valencia.',
-    tecnico: 'Gustavo Alfaro',
-    jugadores: ['Enner Valencia', 'Moises Caicedo', 'Piero Hincapié', 'Pervis Estupiñán', 'Gonzalo Plata'],
-    resena: 'Ecuador disputó el Grupo A junto a Qatar, Senegal y Países Bajos. Se consiguieron 4 puntos memorables, demostrando el gran nivel de la nueva generación dorada.',
-    imagen: 'seleccion_2026.jpeg' // Se usará por defecto seleccion_2026.jpeg si no hay otra
+    tecnico: 'Gustavo Alfaro (Argentina)',
+    jugadores: [
+      { dorsal: '1', nombre: 'Hernán Galíndez', pos: 'POR' },
+      { dorsal: '2', nombre: 'Félix Torres', pos: 'DEF' },
+      { dorsal: '3', nombre: 'Piero Hincapié', pos: 'DEF' },
+      { dorsal: '4', nombre: 'Robert Arboleda', pos: 'DEF' },
+      { dorsal: '5', nombre: 'José Cifuentes', pos: 'MED' },
+      { dorsal: '6', nombre: 'Willian Pacho', pos: 'DEF' },
+      { dorsal: '7', nombre: 'Pervis Estupiñán', pos: 'DEF' },
+      { dorsal: '8', nombre: 'Carlos Gruezo', pos: 'MED' },
+      { dorsal: '9', nombre: 'Ayrton Preciado', pos: 'MED' },
+      { dorsal: '10', nombre: 'Romario Ibarra', pos: 'MED' },
+      { dorsal: '11', nombre: 'Michael Estrada', pos: 'DEL' },
+      { dorsal: '12', nombre: 'Moisés Ramírez', pos: 'POR' },
+      { dorsal: '13', nombre: 'Enner Valencia', pos: 'DEL' },
+      { dorsal: '14', nombre: 'Xavier Arreaga', pos: 'DEF' },
+      { dorsal: '15', nombre: 'Ángel Mena', pos: 'MED' },
+      { dorsal: '16', nombre: 'Jeremy Sarmiento', pos: 'MED' },
+      { dorsal: '17', nombre: 'Ángelo Preciado', pos: 'DEF' },
+      { dorsal: '18', nombre: 'Diego Palacios', pos: 'DEF' },
+      { dorsal: '19', nombre: 'Gonzalo Plata', pos: 'MED' },
+      { dorsal: '20', nombre: 'Jhegson Méndez', pos: 'MED' },
+      { dorsal: '21', nombre: 'Alan Franco', pos: 'MED' },
+      { dorsal: '22', nombre: 'Alexander Domínguez', pos: 'POR' },
+      { dorsal: '23', nombre: 'Moisés Caicedo', pos: 'MED' },
+      { dorsal: '24', nombre: 'Djorkaeff Reasco', pos: 'DEL' },
+      { dorsal: '25', nombre: 'Jackson Porozo', pos: 'DEF' },
+      { dorsal: '26', nombre: 'Kevin Rodríguez', pos: 'DEL' }
+    ],
+    resena: 'Ecuador tuvo el honor de disputar el partido inaugural de la Copa Mundial de 2022 contra el anfitrión, Catar, logrando una victoria histórica. Clasificó en cuarto lugar de la CONMEBOL. Aunque mostró un gran nivel al empatar con Países Bajos, una derrota ante Senegal en el último partido de la fase de grupos significó su eliminación del torneo.',
+    enfrentamientos: [
+      'Catar 0 - 2 Ecuador (Goles: Enner Valencia x2)',
+      'Países Bajos 1 - 1 Ecuador (Gol: Enner Valencia)',
+      'Ecuador 1 - 2 Senegal (Gol: Moisés Caicedo)'
+    ],
+    imagen: require('@/assets/images/players/seleccion_2022.jpeg')
   },
   {
     id: '2014',
     anio: '2014',
     sede: 'Brasil',
     descripcion: 'Tercer mundial de la Tri, logrando una victoria de 2-1 ante Honduras.',
-    tecnico: 'Reinaldo Rueda',
-    jugadores: ['Antonio Valencia', 'Felipe Caicedo', 'Jefferson Montero', 'Alexander Domínguez', 'Christian Noboa'],
-    resena: 'Ecuador batalló en el Grupo E con Francia, Suiza y Honduras. Obtuvo 4 puntos pero no alcanzó para clasificar a octavos.',
-    imagen: 'seleccion_2026.jpeg'
+    tecnico: 'Reinaldo Rueda (Colombia)',
+    jugadores: [
+      { dorsal: '1', nombre: 'Máximo Banguera', pos: 'POR' },
+      { dorsal: '2', nombre: 'Jorge Guagua', pos: 'DEF' },
+      { dorsal: '3', nombre: 'Frickson Erazo', pos: 'DEF' },
+      { dorsal: '4', nombre: 'Juan Carlos Paredes', pos: 'DEF' },
+      { dorsal: '5', nombre: 'Renato Ibarra', pos: 'MED' },
+      { dorsal: '6', nombre: 'Christian Noboa', pos: 'MED' },
+      { dorsal: '7', nombre: 'Jefferson Montero', pos: 'MED' },
+      { dorsal: '8', nombre: 'Édison Méndez', pos: 'MED' },
+      { dorsal: '9', nombre: 'Joao Rojas', pos: 'DEL' },
+      { dorsal: '10', nombre: 'Walter Ayoví', pos: 'MED' },
+      { dorsal: '11', nombre: 'Felipe Caicedo', pos: 'DEL' },
+      { dorsal: '12', nombre: 'Adrián Bone', pos: 'POR' },
+      { dorsal: '13', nombre: 'Enner Valencia', pos: 'DEL' },
+      { dorsal: '14', nombre: 'Oswaldo Minda', pos: 'MED' },
+      { dorsal: '15', nombre: 'Michael Arroyo', pos: 'DEL' },
+      { dorsal: '16', nombre: 'Antonio Valencia', pos: 'MED' },
+      { dorsal: '17', nombre: 'Jaime Ayoví', pos: 'DEL' },
+      { dorsal: '18', nombre: 'Oscar Bagüí', pos: 'DEF' },
+      { dorsal: '19', nombre: 'Luis Saritama', pos: 'MED' },
+      { dorsal: '20', nombre: 'Fidel Martínez', pos: 'MED' },
+      { dorsal: '21', nombre: 'Gabriel Achilier', pos: 'DEF' },
+      { dorsal: '22', nombre: 'Alexander Domínguez', pos: 'POR' },
+      { dorsal: '23', nombre: 'Carlos Gruezo', pos: 'MED' }
+    ],
+    resena: 'Tras una ausencia en el Mundial de 2010, Ecuador regresó a la cita mundialista en Brasil 2014, clasificando en el cuarto lugar de la CONMEBOL. Su actuación en el torneo fue de contrastes: una derrota agónica ante Suiza, una victoria contra Honduras y un empate valioso frente a Francia. A pesar de los esfuerzos, no logró superar la fase de grupos.',
+    enfrentamientos: [
+      'Suiza 2 - 1 Ecuador (Gol: Enner Valencia)',
+      'Honduras 1 - 2 Ecuador (Goles: Enner Valencia x2)',
+      'Ecuador 0 - 0 Francia'
+    ],
+    imagen: require('@/assets/images/players/seleccion_2014.jpeg')
   },
   {
     id: '2006',
     anio: '2006',
     sede: 'Alemania',
     descripcion: '¡La mejor participación histórica! Clasificamos por primera vez a Octavos de Final.',
-    tecnico: 'Luis Fernando Suárez',
-    jugadores: ['Agustín Delgado', 'Carlos Tenorio', 'Iván Hurtado', 'Edwin Tenorio', 'Cristian Lara'],
-    resena: 'Derrotamos a Polonia (2-0) y Costa Rica (3-0) en fase de grupos. Fuimos eliminados por Inglaterra con un tiro libre de David Beckham.',
-    imagen: 'seleccion_2026.jpeg'
+    tecnico: 'Luis Fernando Suárez (Colombia)',
+    jugadores: [
+      { dorsal: '1', nombre: 'Edwin Villafuerte', pos: 'POR' },
+      { dorsal: '2', nombre: 'Jorge Guagua', pos: 'DEF' },
+      { dorsal: '3', nombre: 'Iván Hurtado', pos: 'DEF' },
+      { dorsal: '4', nombre: 'Ulises de la Cruz', pos: 'DEF' },
+      { dorsal: '5', nombre: 'José Luis Perlaza', pos: 'MED' },
+      { dorsal: '6', nombre: 'Paul Ambrosi', pos: 'DEF' },
+      { dorsal: '7', nombre: 'Christian Lara', pos: 'MED' },
+      { dorsal: '8', nombre: 'Édison Méndez', pos: 'MED' },
+      { dorsal: '9', nombre: 'Felix Borja', pos: 'DEL' },
+      { dorsal: '10', nombre: 'Iván Kaviedes', pos: 'DEL' },
+      { dorsal: '11', nombre: 'Agustín Delgado', pos: 'DEL' },
+      { dorsal: '12', nombre: 'Cristian Mora', pos: 'POR' },
+      { dorsal: '13', nombre: 'Paul Ambrosi', pos: 'DEF' },
+      { dorsal: '14', nombre: 'Segundo Castillo', pos: 'MED' },
+      { dorsal: '15', nombre: 'Marlon Ayoví', pos: 'MED' },
+      { dorsal: '16', nombre: 'Antonio Valencia', pos: 'MED' },
+      { dorsal: '17', nombre: 'Giovanny Espinoza', pos: 'DEF' },
+      { dorsal: '18', nombre: 'Neicer Reasco', pos: 'DEF' },
+      { dorsal: '19', nombre: 'Luis Saritama', pos: 'MED' },
+      { dorsal: '20', nombre: 'Edwin Tenorio', pos: 'MED' },
+      { dorsal: '21', nombre: 'Carlos Tenorio', pos: 'DEL' },
+      { dorsal: '22', nombre: 'Damian Lanza', pos: 'POR' },
+      { dorsal: '23', nombre: 'Christian Benítez', pos: 'DEL' }
+    ],
+    resena: 'La participación de Ecuador en Alemania 2006 es considerada la más exitosa en su historia mundialista. Clasificando en tercer lugar de las eliminatorias sudamericanas, la "Tri" sorprendió al mundo al avanzar por primera vez a los octavos de final. En esta instancia, fue eliminada por Inglaterra en un ajustado partido, pero su desempeño dejó una huella imborrable en la afición ecuatoriana.',
+    enfrentamientos: [
+      'Polonia 0 - 2 Ecuador (Goles: Carlos Tenorio, Agustín Delgado)',
+      'Ecuador 3 - 0 Costa Rica (Goles: Carlos Tenorio, Agustín Delgado, Iván Kaviedes)',
+      'Ecuador 0 - 3 Alemania',
+      'Inglaterra 1 - 0 Ecuador (Octavos de Final)'
+    ],
+    imagen: require('@/assets/images/players/seleccion_2006.jpeg')
   },
   {
     id: '2002',
     anio: '2002',
     sede: 'Corea/Japón',
     descripcion: 'Nuestra primera e histórica clasificación mundialista con el gol inolvidable de Kaviedes.',
-    tecnico: 'Hernán Darío Gómez',
-    jugadores: ['Álex Aguinaga', 'Iván Kaviedes', 'Agustín Delgado', 'José Francisco Cevallos', 'Ulises de la Cruz'],
-    resena: 'El histórico empate contra Uruguay en Quito nos dio el boleto directo. En el mundial logramos nuestra primera victoria al derrotar 1-0 a Croacia.',
-    imagen: 'seleccion_2026.jpeg'
+    tecnico: 'Hernán Darío "Bolillo" Gómez (Colombia)',
+    jugadores: [
+      { dorsal: '1', nombre: 'José Francisco Cevallos', pos: 'POR' },
+      { dorsal: '2', nombre: 'Augusto Poroso', pos: 'DEF' },
+      { dorsal: '3', nombre: 'Iván Hurtado', pos: 'DEF' },
+      { dorsal: '4', nombre: 'Ulises de la Cruz', pos: 'DEF' },
+      { dorsal: '5', nombre: 'Alfonso Obregón', pos: 'MED' },
+      { dorsal: '6', nombre: 'Raúl Guerrón', pos: 'DEF' },
+      { dorsal: '7', nombre: 'Nicolás Asencio', pos: 'MED' },
+      { dorsal: '8', nombre: 'Luis Gómez', pos: 'DEF' },
+      { dorsal: '9', nombre: 'Iván Kaviedes', pos: 'DEL' },
+      { dorsal: '10', nombre: 'Álex Aguinaga', pos: 'MED' },
+      { dorsal: '11', nombre: 'Agustín Delgado', pos: 'DEL' },
+      { dorsal: '12', nombre: 'Oswaldo Ibarra', pos: 'POR' },
+      { dorsal: '13', nombre: 'Ángel Fernández', pos: 'DEL' },
+      { dorsal: '14', nombre: 'Juan Carlos Burbano', pos: 'MED' },
+      { dorsal: '15', nombre: 'Marlon Ayoví', pos: 'DEF' },
+      { dorsal: '16', nombre: 'Cléber Chalá', pos: 'MED' },
+      { dorsal: '17', nombre: 'Giovanny Espinoza', pos: 'DEF' },
+      { dorsal: '18', nombre: 'Carlos Tenorio', pos: 'DEL' },
+      { dorsal: '19', nombre: 'Édison Méndez', pos: 'MED' },
+      { dorsal: '20', nombre: 'Edwin Tenorio', pos: 'MED' },
+      { dorsal: '21', nombre: 'Wellington Sánchez', pos: 'MED' },
+      { dorsal: '22', nombre: 'Daniel Viteri', pos: 'POR' },
+      { dorsal: '23', nombre: 'Walter Ayoví', pos: 'DEF' }
+    ],
+    resena: 'La Copa Mundial de 2002 marcó un hito histórico para el fútbol ecuatoriano al ser su primera clasificación a la máxima cita mundialista. Bajo la dirección técnica del colombiano Hernán Darío "Bolillo" Gómez, Ecuador logró su pase tras una destacada eliminatoria sudamericana, finalizando en el segundo lugar. Aunque su participación en el torneo fue breve, culminando en la fase de grupos, dejó un legado importante al conseguir su primera victoria mundialista.',
+    enfrentamientos: [
+      'Italia 2 - 0 Ecuador',
+      'México 2 - 1 Ecuador (Gol: Agustín Delgado)',
+      'Ecuador 1 - 0 Croacia (Gol: Édison Méndez)'
+    ],
+    imagen: require('@/assets/images/players/seleccion_2002.jpeg')
   }
 ];
 
@@ -110,10 +261,8 @@ export default function HomeScreen() {
           <View style={styles.overlay} />
           <View style={styles.headerInfo}>
             <View style={styles.titleRow}>
-              <ThemedText type="title" style={styles.bannerTitle}>La Tri</ThemedText>
-              <SoccerBall />
+              <ThemedText type="title" style={styles.bannerTitle}>Ruta histórica mundialista</ThemedText>
             </View>
-            <ThemedText style={styles.bannerSubtitle}>Ruta histórica mundialista</ThemedText>
           </View>
         </View>
 
