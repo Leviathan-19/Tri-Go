@@ -1,15 +1,15 @@
+import { Image } from 'expo-image';
+import { useLocalSearchParams, useRouter } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {
+  SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
-  View,
-  ScrollView,
   TouchableOpacity,
-  SafeAreaView
+  View
 } from 'react-native';
-import { useLocalSearchParams, useRouter } from 'expo-router';
-import { Image } from 'expo-image';
-import { StatusBar } from 'expo-status-bar';
 import { YEARS_DATA } from '../(tabs)/index';
 
 export default function DetalleAnioScreen() {
@@ -41,7 +41,8 @@ export default function DetalleAnioScreen() {
       {/* Header Personalizado */}
       <View style={styles.header}>
         <TouchableOpacity style={styles.headerBackButton} onPress={volver}>
-          <Text style={styles.headerBackButtonText}>← Volver</Text>
+          {/* Imagen del plantel */}
+          <Text style={styles.headerBackButtonText}>Volver</Text>
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Mundial {datos.anio}</Text>
         <View style={styles.headerPlaceholder} />
