@@ -7,7 +7,7 @@
     "icon": "./assets/images/fonts_tri/LogoTriGo.jpg",
     "splash": {
       "image": "./assets/images/fonts_tri/splashScreen.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#FFD100"
     },
     "scheme": "trigo",
@@ -38,8 +38,7 @@
         "expo-splash-screen",
         {
           "image": "./assets/images/fonts_tri/splashScreen.png",
-          "imageWidth": 200,
-          "resizeMode": "content",
+          "resizeMode": "cover",
           "backgroundColor": "#FFD100",
           "dark": {
             "backgroundColor": "#FFD100"
