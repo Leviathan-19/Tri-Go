@@ -49,15 +49,33 @@ Si deseas probar el entorno de desarrollo o explorar el código:
 
 ---
 
-## 🎨 Diseño y Activos Visuales
+## 📱 Vistas de la Aplicación
 
-A continuación, algunas de las imágenes y diseños clave que se usaron dentro de la aplicación:
+A continuación, capturas de pantalla de la aplicación ejecutándose en el dispositivo:
+
+### Pantalla de Carga (Splash Screen)
+![Splash Screen en ejecución](./assets/images/aplicacion/SplashScreen.jpeg)
+
+### Interfaz Principal (Línea de Tiempo)
+![Línea de Tiempo 1](./assets/images/aplicacion/LineaDeTiempo-1.jpeg)
+![Línea de Tiempo 2](./assets/images/aplicacion/LineaDeTiempo-2.jpeg)
+
+### Detalles del Mundial (Plantilla y Enfrentamientos)
+![Detalle Mundial 2026 - Vista 1](./assets/images/aplicacion/TarjetaMundial2026-1.jpeg)
+![Detalle Mundial 2026 - Vista 2](./assets/images/aplicacion/TarjetaMundial2026-2.jpeg)
+
+### Aplicación instalada en el dispositivo
+![App en Dispositivo](./assets/images/aplicacion/AppDesdeElDispositivo.jpeg)
+
+---
+
+## 🎨 Activos Visuales Originales
 
 ### Logo de la Aplicación
 ![Logo Tri GO](./assets/images/fonts_tri/LogoTriGo.jpg)
 
-### Pantalla de Carga (Splash Screen)
-![Splash Screen](./assets/images/fonts_tri/splashScreen.png)
+### Activo Base del Splash Screen
+![Splash Screen Original](./assets/images/fonts_tri/splashScreen.png)
 
 ---
 
