@@ -136,9 +136,7 @@ export default function HomeScreen() {
                 <View key={item.id} style={styles.timelineItem}>
                   {/* Nodo circular indicador de año */}
                   <View style={styles.timelineNodeContainer}>
-                    <View style={styles.timelineNodeOuter}>
-                      <View style={styles.timelineNodeInner} />
-                    </View>
+                    <SoccerBall />
                   </View>
                   {/* Tarjeta del Año */}
                   <TouchableOpacity
@@ -249,13 +247,13 @@ const styles = StyleSheet.create({
   },
   timelineNodeContainer: {
     position: 'absolute',
-    left: -30,
-    top: 12,
-    width: 22,
-    height: 22,
+    left: -35,
+    top: 7,
+    width: 32,
+    height: 32,
     alignItems: 'center',
     justifyContent: 'center',
-    zIndex: 3,
+    zIndex: 5,
   },
   timelineNodeOuter: {
     width: 20,

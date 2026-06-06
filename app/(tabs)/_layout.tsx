@@ -8,11 +8,12 @@ export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
-    <Tabs>
+    <Tabs screenOptions={{ tabBarStyle: { display: 'none' } }}>
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: 'Mundiales',
+          headerShown: false,
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
         }}
       />
