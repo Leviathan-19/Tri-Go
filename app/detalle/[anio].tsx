@@ -52,7 +52,7 @@ export default function DetalleAnioScreen() {
         {/* Imagen del plantel */}
         <View style={styles.imageContainer}>
           <Image
-            source={require('@/assets/images/players/seleccion_2026.jpeg')}
+            source={datos.imagen}
             style={styles.playerImage}
             contentFit="cover"
           />
@@ -79,25 +79,34 @@ export default function DetalleAnioScreen() {
           <Text style={styles.resenaText}>{datos.resena}</Text>
         </View>
 
-        {/* Listado de Jugadores destacados */}
+        {/* Enfrentamientos */}
+        {datos.enfrentamientos && (
+          <View style={styles.sectionCard}>
+            <Text style={styles.sectionLabel}>ENFRENTAMIENTOS</Text>
+            <View style={styles.playersContainer}>
+              {datos.enfrentamientos.map((partido: string, index: number) => (
+                <View key={index} style={styles.playerRow}>
+                  <Text style={styles.resenaText}>{partido}</Text>
+                </View>
+              ))}
+            </View>
+          </View>
+        )}
+
+        {/* Listado de Jugadores */}
         <View style={styles.sectionCard}>
-          <Text style={styles.sectionLabel}>JUGADORES DESTACADOS</Text>
+          <Text style={styles.sectionLabel}>PLANTILLA OFICIAL</Text>
           <View style={styles.playersContainer}>
-            {datos.jugadores.map((jugador, index) => (
+            {datos.jugadores.map((jugador: any, index: number) => (
               <View key={index} style={styles.playerRow}>
                 <View style={styles.playerNumberContainer}>
-                  <Text style={styles.playerNumber}>{index + 1}</Text>
+                  <Text style={styles.playerNumber}>{jugador.dorsal}</Text>
                 </View>
-                <Text style={styles.playerName}>{jugador}</Text>
+                <Text style={styles.playerName}>{jugador.nombre} ({jugador.pos})</Text>
               </View>
             ))}
           </View>
         </View>
-
-        {/* Botón inferior para volver */}
-        <TouchableOpacity style={styles.bottomBackButton} onPress={volver}>
-          <Text style={styles.bottomBackButtonText}>Volver a la línea de tiempo</Text>
-        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
@@ -136,7 +145,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 16,
-    paddingVertical: 15,
+    paddingTop: 45,
+    paddingBottom: 15,
     borderBottomWidth: 1,
     borderBottomColor: 'rgba(255, 209, 0, 0.15)',
     backgroundColor: '#161f3d',
@@ -146,7 +156,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   headerBackButtonText: {
-    color: '#FFD100', // Dorado
+    color: '#FFD100',
     fontSize: 16,
     fontWeight: 'bold',
   },
@@ -156,7 +166,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   headerPlaceholder: {
-    width: 60, // Para balancear el back button a la izquierda
+    width: 60,
   },
   scrollContent: {
     padding: 20,
@@ -202,8 +212,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(255, 209, 0, 0.1)',
   },
+  // Rojo oficial para los títulos de sección
   sectionLabel: {
-    color: '#EF3340', // Rojo oficial para los títulos de sección
+    color: '#EF3340',
     fontSize: 12,
     fontWeight: 'bold',
     letterSpacing: 1.5,
