@@ -5,6 +5,11 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/fonts_tri/LogoTriGo.jpg",
+    "splash": {
+      "image": "./assets/images/fonts_tri/splashScreen.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFD100"
+    },
     "scheme": "trigo",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
